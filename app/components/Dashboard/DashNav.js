@@ -6,7 +6,9 @@ function DashNav(props){
   return (
     <div className="DashNav">
       <ul>
-        <li><Link to="/"><i className="ion-chevron-right"></i>Here</Link></li>
+        <li><Link to="/"><i className="ion-chevron-right"></i>Landing</Link></li>
+        <li><Link to="/users"><i className="ion-chevron-right"></i>Users</Link></li>
+        <li><Link to="/leaderboard"><i className="ion-chevron-right"></i>Leaderboard</Link></li>
       </ul>
     </div>
   );

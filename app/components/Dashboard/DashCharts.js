@@ -43,9 +43,9 @@ function DashCharts(props){
   };
   return (
     <div className="DashCharts">
-      <ResponsiveContainer  width='100%' height='100%'>
+      <ResponsiveContainer  width='100%' height='72%'>
         <AreaChart className="area" data={data}
-              margin={{top: 10, right: 30, left: 0, bottom: 0}}>
+              margin={{top: 100, right: 30, left: 0, bottom: 0}}>
             <XAxis dataKey="name"/>
             <YAxis/>
             <CartesianGrid strokeDasharray="3 3"/>
@@ -57,14 +57,14 @@ function DashCharts(props){
       </ResponsiveContainer>
 
       <ResponsiveContainer width='100%' height='100%'>
-        <RadialBarChart className="radial" cx="30%" cy="50%" innerRadius="10%" outerRadius="60%" data={data2}>
+        <RadialBarChart className="radial" cx="50%" cy="70%" innerRadius="80%" outerRadius="50%" data={data2}>
           <RadialBar minAngle={15} label background clockWise={true} dataKey='uv'/>
-          <Legend iconSize={10} width={90} height={140} layout='vertical' verticalAlign='middle' wrapperStyle={style}/>
+          <Legend iconSize={10} width={400} height={10} layout='horizontal' verticalAlign='top' wrapperStyle={style}/>
         </RadialBarChart>
       </ResponsiveContainer>
 
       <ResponsiveContainer width='100%' height='100%'>
-        <RadarChart className="radar" cx="50%" cy="50%" outerRadius="80%" data={data3}>
+        <RadarChart className="radar" cx="50%" cy="50%" outerRadius="50%" data={data3}>
             <Radar name="Mike" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6}/>
             <Radar name="Lily" dataKey="B" stroke="#82ca9d" fill="#82ca9d" fillOpacity={0.6}/>
             <PolarGrid />
