@@ -1,3 +1,4 @@
+import './Dashboard/styles/App.scss';
 import React, { Component, PropTypes } from 'react';
 import DashNav from './Dashboard/DashNav';
 
@@ -10,10 +11,10 @@ export default class App extends Component {
     return (
       <div>
         <div className="row">
-          <div className="col-sm-2 nopadding">
+          <div className="col-sm-2 DashNavWrap">
             <DashNav />
           </div>
-          <div className="col-sm-10 nopadding">
+          <div className="col-sm-10 DashContentWrap">
             {this.props.children}
           </div>
         </div>
