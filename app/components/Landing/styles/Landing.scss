@@ -19,10 +19,7 @@ $font: 'Press Start 2P', cursive;
 body{
   height: 100vh;
   overflow-y: hidden;
-  background-color: #232C39;
-  background: #ff4b1f; /* fallback for old browsers */
-  background: linear-gradient(45deg,#39cccc,rgba(0,255,127,.7));
-
+  background: linear-gradient(to bottom,  #d11c6f 0%,#b73e93 100%);
 }
 .Landing{
   height: 100vh;
@@ -39,18 +36,18 @@ body{
   a{
     margin-top: 5vh;
     box-shadow: 0 3px 4px rgba(0,0,0,0.16), 0 3px 4px rgba(0,0,0,0.23);
-    color: #fff;
-    background-color: #fc561e;
+    color: #fefb00;
+    background-color: #9238e1;
     height: 90px;
     padding-top: 15px;
     width: 350px;
     font-size: 40px;
-    border: 2px solid #fff;
+    border: 2px solid #fefb00;
     border-radius: 0;
     &:hover{
-      color: #fc561e;
-      background-color: #fff;
-      border-color: #fc561e;
+      color: #b161fc;
+      background-color: #fefb00;
+      border-color: #b161fc;
     }
   }
 }
