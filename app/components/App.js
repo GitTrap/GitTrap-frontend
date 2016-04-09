@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import DashNav from './Dashboard/DashNav';
 
 export default class App extends Component {
   static propTypes = {
@@ -8,7 +9,14 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        {this.props.children}
+        <div className="row">
+          <div className="col-sm-2 nopadding">
+            <DashNav />
+          </div>
+          <div className="col-sm-10 nopadding">
+            {this.props.children}
+          </div>
+        </div>
         {
           (() => {
             if (process.env.NODE_ENV !== 'production') {
