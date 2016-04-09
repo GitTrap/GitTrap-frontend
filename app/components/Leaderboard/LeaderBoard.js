@@ -7,17 +7,29 @@ export default class LeaderBoard extends Component {
     return (
       <div className="LeaderBoard">
         <div className="row">
-          <div className="col-sm-4">
+          <div style={styles.leftCol} className="col-sm-4">
             <LeaderboardCategory border="streak" boardTitle="Streak"/>
           </div>
-          <div className="col-sm-4">
+          <div style={styles.middleCol} className="col-sm-4">
             <LeaderboardCategory border="commits" boardTitle="Commits"/>
           </div>
-          <div className="col-sm-4">
+          <div style={styles.rightCol} className="col-sm-4">
             <LeaderboardCategory border="contributions" boardTitle="Contributions"/>
           </div>
         </div>
       </div>
     );
+  }
+}
+
+const styles = {
+  leftCol: {
+    paddingRight: 0
+  },
+  middleCol: {
+    padding: 0
+  },
+  rightCol: {
+    paddingLeft: 0
   }
 }
