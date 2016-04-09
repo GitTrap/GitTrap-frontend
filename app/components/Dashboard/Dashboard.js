@@ -8,13 +8,13 @@ import DashFeed from './DashFeed';
 export default class Dashboard extends Component {
   render() {
     return (
-      <div className="Dashboard nopadding">
-        <div className="col-sm-12 nopadding segment">
+      <div className="Dashboard row">
+        <div className="col-sm-12 segment">
           <DashCharts />
-          <div className="col-sm-6 nopadding">
+          <div className="col-sm-6">
             <DashFeed listType="Follower Feed"/>
           </div>
-          <div className="col-sm-6 nopadding">
+          <div className="col-sm-6">
             <DashFeed listType="Issues"/>
           </div>
         </div>
