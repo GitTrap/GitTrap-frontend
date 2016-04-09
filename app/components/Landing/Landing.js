@@ -7,7 +7,7 @@ export default class Landing extends Component {
     return (
       <div className="Landing">
         <h1>Git Trap</h1>
-          <Link to="/dashboard" className="btn btn-lg">Enter Your Cave</Link>
+          <Link to="/dashboard" className="btn btn-lg">Start Trappin</Link>
       </div>
     );
   }
