@@ -1,0 +1,13 @@
+.DashCharts{
+  height: 400px;
+  background-color: #fff;
+  display:flex;
+  justify-content:space-between;
+  .area, .radial, .radar{
+    display: inline-block !important;
+    flex:1;
+  }
+  .radar{
+    margin-top:-10px;
+  }
+}

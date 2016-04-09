@@ -1,0 +1,39 @@
+.DashNav{
+  background-color:#fc561e;
+  border-top: solid 1px #fff;
+  border-bottom: solid 1px #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.16), 0 4px 8px rgba(0,0,0,0.23);
+  z-index: 50;
+  height: 100vh;
+	overflow: auto;
+    ul{
+      height:100%;
+      padding:0;
+      margin:0;
+      li{
+        padding-left: 16.3px;
+        padding-top:16.3px;
+        padding-bottom: 16.2px;
+        border-bottom:solid 1px #fff;
+        list-style: none;
+        a{
+          font-size: 13px;
+          color: #fff;
+          i{
+            font-size: 14px;
+            float:right;
+            color: #fff;
+            padding-right: 5%;
+            padding-left: 10%;
+            font-weiht:bold;
+          }
+          .power{
+            color: red;
+          }
+        }
+        .signOut{
+          text-align: center;
+        }
+      }
+    }
+}

@@ -1,0 +1,56 @@
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap-sprockets.scss";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap.scss";
+
+.nopadding {
+ padding-left: 0;
+ padding-right: 0;
+ margin-right: 0;
+ margin-left: 0;
+}
+
+$font: 'Press Start 2P', cursive;
+
+.segment{
+  height: 100vh;
+  min-height: 100vh;
+  overflow: auto;
+}
+
+body{
+  height: 100vh;
+  overflow-y: hidden;
+  background-color: #232C39;
+  background: #ff4b1f; /* fallback for old browsers */
+  background: linear-gradient(45deg,#39cccc,rgba(0,255,127,.7));
+
+}
+.Landing{
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  h1{
+    font-size: 60px;
+    color: #fff;
+    font-family: $font;
+    text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  }
+  a{
+    margin-top: 5vh;
+    box-shadow: 0 3px 4px rgba(0,0,0,0.16), 0 3px 4px rgba(0,0,0,0.23);
+    color: #fff;
+    background-color: #fc561e;
+    height: 90px;
+    padding-top: 15px;
+    width: 350px;
+    font-size: 40px;
+    border: 2px solid #fff;
+    border-radius: 0;
+    &:hover{
+      color: #fc561e;
+      background-color: #fff;
+      border-color: #fc561e;
+    }
+  }
+}
