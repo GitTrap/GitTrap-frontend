@@ -71,6 +71,7 @@ export default function LeaderboardCategory (props) {
   });
   return (
     <div className="LeaderboardCategory">
+      <h3 className={props.border}>{props.boardTitle}</h3>
       <ul>
         {leaders}
       </ul>

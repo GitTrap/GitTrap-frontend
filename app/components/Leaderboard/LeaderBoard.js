@@ -8,13 +8,13 @@ export default class LeaderBoard extends Component {
       <div className="LeaderBoard">
         <div className="row">
           <div className="col-sm-4">
-            <LeaderboardCategory />
+            <LeaderboardCategory border="streak" boardTitle="Streak"/>
           </div>
           <div className="col-sm-4">
-            <LeaderboardCategory />
+            <LeaderboardCategory border="commits" boardTitle="Commits"/>
           </div>
           <div className="col-sm-4">
-            <LeaderboardCategory />
+            <LeaderboardCategory border="contributions" boardTitle="Contributions"/>
           </div>
         </div>
       </div>
