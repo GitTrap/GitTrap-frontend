@@ -8,10 +8,10 @@ export default class Dashboard extends Component {
   render() {
     return (
       <div className="Dashboard">
-        <div className="col-sm-2 nopadding">
+        <div className="col-sm-2 DashNavWrap nopadding">
           <DashNav />
         </div>
-        <div className="col-sm-10 nopadding segment">
+        <div className="col-sm-10 DashContentWrap nopadding segment">
           <DashCharts />
         </div>
       </div>

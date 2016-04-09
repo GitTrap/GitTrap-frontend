@@ -2,4 +2,10 @@
   h1{
     color: #fff;
   }
+  .DashNavWrap {
+    z-index: 2;
+  }
+  .DashContentWrap {
+    z-index: 0;
+  }
 }
