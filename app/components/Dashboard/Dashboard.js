@@ -3,16 +3,20 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import DashNav from './DashNav';
 import DashCharts from './DashCharts';
+import DashFeed from './DashFeed';
 
 export default class Dashboard extends Component {
   render() {
     return (
-      <div className="Dashboard">
-        <div className="col-sm-2 DashNavWrap nopadding">
-          <DashNav />
-        </div>
-        <div className="col-sm-10 DashContentWrap nopadding segment">
+      <div className="Dashboard nopadding">
+        <div className="col-sm-12 nopadding segment">
           <DashCharts />
+          <div className="col-sm-6 nopadding">
+            <DashFeed listType="Follower Feed"/>
+          </div>
+          <div className="col-sm-6 nopadding">
+            <DashFeed listType="Issues"/>
+          </div>
         </div>
       </div>
     );
