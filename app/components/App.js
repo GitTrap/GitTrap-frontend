@@ -11,10 +11,10 @@ export default class App extends Component {
     return (
       <div>
         <div className="row">
-          <div className="col-sm-2 DashNavWrap">
+          <div className="col-sm-2 DashNavWrap nopadding">
             <DashNav />
           </div>
-          <div className="col-sm-10 DashContentWrap">
+          <div className="col-sm-10 DashContentWrap nopadding">
             {this.props.children}
           </div>
         </div>

@@ -26,14 +26,14 @@ export default function DashFeed (props) {
 
   var feed = data.map((item, key) => {
     return (
-      <li className="row nopadding">
+      <li className="row nopadding" key={key}>
         <p className="col-sm-3">{item.user}</p>
         <p className="col-sm-3">{item.type}</p>
         <p className="col-sm-3">{item.repo}</p>
         <p className="col-sm-3">{item.branch}</p>
       </li>
     );
-  })
+  });
 
   return (
     <div className="DashFeed">
