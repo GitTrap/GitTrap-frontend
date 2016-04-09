@@ -17,8 +17,11 @@ function DashNav(props){
 
 const styles = {
     linkActive: {
-        backgroundColor: '#b161fc',
-        color: '#fff'
+        // backgroundColor: '#b161fc',
+        // color: '#fff'
+        color: '#B25AFF',
+        fontWeight:800,
+        boxShadow: '-7px 0px 0 0 #B25AFF inset'
     }
 }
 
