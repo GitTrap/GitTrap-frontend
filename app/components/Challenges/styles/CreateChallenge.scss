@@ -1,0 +1,61 @@
+.CreateChallenge{
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  min-height: 300px;
+  width: 400px;
+  h3{
+    margin:0;
+    text-align: center;
+    background-color: #d11c6f;
+    width: 100%;
+    padding: 20px;
+    color: #fff;
+  }
+  .setGoal{
+    padding: 30px;
+    input{
+      margin-bottom: 20px;
+      border:none;
+      box-shadow: none;
+      background-color: #E6E6E6;
+      color: #d11c6f;
+    }
+  }
+  .followersToChallenge{
+    border: 1px solid #f2f2f2;
+    margin: 30px;
+    margin-top: 0px;
+    max-height: 120px;
+    overflow: auto;
+    ul{
+      padding: 0;
+      width: 100%;
+      li{
+        border-bottom: 1px solid #f2f2f2;
+        width: 100%;
+        height: 40px;
+        list-style: none;
+        p{
+          padding-left: 5px;
+          padding-top: 10px;
+          display: inline-block;
+        }
+        button{
+          margin-right:5px;
+          margin-top: 5px;
+          float: right;
+          height: 30px;
+          background-color: #b161fc;
+          color: #fff;
+        }
+      }
+    }
+  }
+  .submit{
+    width: 100%;
+    border-radius: 0;
+    padding: 15px;
+    background-color: #efb61f;
+    border: none;
+    color: #fff;
+  }
+}
