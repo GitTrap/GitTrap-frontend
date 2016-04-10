@@ -27,8 +27,8 @@ class Users extends Component {
     var users = this.props.users.devPool.map((user, key) => {
       return (
         <div key={key} className="user-item">
-          <img src={user.avatar_url}/>
-          <a href="#" onClick={(event) => this.onUserClick(event, user)} className="user">{user}</a>
+          <img src={user.avatar}/>
+          <a href="#" onClick={(event) => this.onUserClick(event, user.username)} className="user">{user.username}</a>
           <div className="actions">
             <a className="btn btn-default" href="#">Super Follow</a>
             <a className="btn btn-default" href="#">Unfollow</a>

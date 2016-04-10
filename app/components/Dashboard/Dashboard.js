@@ -20,6 +20,11 @@ class Dashboard extends Component {
 
   componentDidMount () {
     this.getDashboardData();
+    this.props.getCommitChart('kennetpostigo')
+    this.props.getTopReposChart('kennetpostigo')
+    this.props.getLanguagesChart('kennetpostigo')
+
+
   }
 
   render() {
@@ -70,6 +75,12 @@ function mapDispatchToProps(dispatch) {
     dashboardSuccess: bindActionCreators(dashboardActions.dashboardSuccess, dispatch),
     dashboardError: bindActionCreators(dashboardActions.dashboardError, dispatch),
     getDashboard: bindActionCreators(dashboardActions.getDashboard, dispatch),
+    commitChart: bindActionCreators(dashboardActions.commitChart, dispatch),
+    topReposChart: bindActionCreators(dashboardActions.topReposChart, dispatch),
+    languagesChart: bindActionCreators(dashboardActions.languagesChart, dispatch),
+    getCommitChart:bindActionCreators(dashboardActions.getCommitChart, dispatch),
+    getTopReposChart:bindActionCreators(dashboardActions.getTopReposChart, dispatch),
+    getLanguagesChart: bindActionCreators(dashboardActions.getLanguagesChart, dispatch)
   }
 }
 

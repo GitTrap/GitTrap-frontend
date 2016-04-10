@@ -63,8 +63,7 @@ export function getCommitChart (info) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        'token': info.token,
-        'username': info.username
+        'username': info
       })
     })
       .then(response => response.json())
@@ -84,7 +83,7 @@ export function getTopReposChart (info) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        'username': info.username
+        'username': info
       })
     })
       .then(response => response.json())
@@ -97,14 +96,14 @@ export function getTopReposChart (info) {
 
 export function getLanguagesChart (info) {
   return dispatch => {
-    return fetch('http://172.18.2.185:1337/dashboard', {
+    return fetch('http://172.18.2.185:1337/languages', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        'username': info.username
+        'username': info
       })
     })
       .then(response => response.json())
@@ -125,8 +124,7 @@ export function getDashboard (info) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        'token': info.token,
-        'username': info.username
+        'username': info
       })
     })
       .then(response => response.json())
