@@ -18,7 +18,7 @@
 
 ### User (authenticated)
 
-```
+```js
 {
   login: "jalvarado91",
   id: 1750392,
