@@ -66,7 +66,7 @@ export function createChallenge (info) {
         'goalOne': info.goalOne,
         'goalTwo': info.goalTwo,
         'goalThree': info.goalThree,
-        'challengees': info.challengees
+        'challengees': info.challengees,
         'username': info.username
       })
     })
