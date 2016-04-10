@@ -24,14 +24,14 @@ export function handleDashboardSuccess (state, data) {
                  set('topRepos', 'temp4').
                  set('languages', 'temp5');
 
-     return update.toJS() || [];
+     return update.toJS();
 }
 
 export function handleDashboardError (state, message) {
     state = I.fromJS(state);
     var update = state.set('isFetching', false).
                  set('error', message);
-    return update.toJS() || '';
+    return update.toJS();
 }
 
 export function handleCommitChart (state, commits) {
@@ -40,20 +40,20 @@ export function handleCommitChart (state, commits) {
     return {
       timeStamp: item[0],
       commits: item[1]
-    } || [];
+    };
   })
   var update = state.set('frequency', I.fromJS(commitsArray))
-  return update.toJS() || [];
+  return update.toJS();
 }
 
 export function handleTopReposChart (state, repos) {
   state = I.fromJS(state);
-  var update = state.set('timeStamp', languages)
-  return update.toJS() || [];
+  var update = state.set('timeStamp', repos)
+  return update.toJS();
 }
 
-export function handleLanguagesChart (state, languages) {
+export function handleLanguagesChart (state, info) {
   state = I.fromJS(state);
-  var update = state.set('timeStamp', languages)
-  return update.toJS() || [];
+  var update = state.set('languages', info)
+  return update.toJS();
 }

@@ -32,7 +32,7 @@ export function dashboardError (message) {
 
 export function commitChart (commits) {
   return {
-    type: DASHBOARD_REQUEST,
+    type: COMMIT_CHART,
     isFetching: true,
     commits
   }
@@ -40,14 +40,14 @@ export function commitChart (commits) {
 
 export function topReposChart (repos) {
   return {
-    type: DASHBOARD_SUCCESS,
+    type: TOP_REPOS,
     isFetching: false,
     repos
   }
 }
 export function languagesChart (info) {
   return {
-    type: DASHBOARD_ERROR,
+    type: LANGUAGES_CHART,
     isFetching: false,
     info
   }
