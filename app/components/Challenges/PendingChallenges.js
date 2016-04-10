@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as challengeActions from './../../actions/ChallengesActions.js';
+import * as userActions from './../../actions/UserActions.js';
 import { Link } from 'react-router';
 
 
@@ -10,6 +11,7 @@ class PendingChallenges extends Component {
 
   componentDidMount () {
     this.props.retreiveChallengeInfo();
+    this.props.getUsers();
   }
 
   render() {
@@ -26,7 +28,7 @@ class PendingChallenges extends Component {
           </div>
           <div className="users">
             <div className="challengers">
-              <img  src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/629c1f14015191.5627be627c443.png"/>
+              <img  src={this.props.users.devPool[0].avatar}/>
               <div className="info">
                 <p>{this.props.challenges.challengees[0]}</p>
                 <p>commits: 6</p>
@@ -36,7 +38,7 @@ class PendingChallenges extends Component {
             </div>
 
             <div className="challengers">
-              <img  src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/629c1f14015191.5627be627c443.png"/>
+              <img  src={this.props.users.devPool[1].avatar}/>
               <div className="info">
                 <p>kennetpostigo</p>
                 <p>commits: 7</p>
@@ -46,7 +48,7 @@ class PendingChallenges extends Component {
             </div>
 
             <div className="challengers">
-              <img  src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/629c1f14015191.5627be627c443.png"/>
+              <img  src={this.props.users.devPool[3].avatar}/>
               <div className="info">
                 <p>jalvarado91</p>
                 <p>commits: 12</p>
@@ -62,13 +64,15 @@ class PendingChallenges extends Component {
 
 function mapStateToProps(state) {
   return {
-    challenges: state.challenges
+    challenges: state.challenges,
+    users: state.users
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    retreiveChallengeInfo: bindActionCreators(challengeActions.retreiveChallengeInfo, dispatch)
+    retreiveChallengeInfo: bindActionCreators(challengeActions.retreiveChallengeInfo, dispatch),
+    getUsers: bindActionCreators(userActions.getUsers, dispatch)
   }
 }
 
