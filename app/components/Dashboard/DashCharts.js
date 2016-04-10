@@ -11,13 +11,13 @@ import {
 export default class DashCharts extends Component {
   render () {
     const data = [
-          {name: 'Page A', uv: 4000},
-          {name: 'Page B', uv: 3000},
-          {name: 'Page C', uv: 2000},
-          {name: 'Page D', uv: 2780},
-          {name: 'Page E', uv: 1890},
-          {name: 'Page F', uv: 2390},
-          {name: 'Page G', uv: 3490},
+          {name: 'Oct 15', uv: 40},
+          {name: 'Nov 15', uv: 30},
+          {name: 'Dec 15', uv: 20},
+          {name: 'Jan 16', uv: 27},
+          {name: 'Feb 16', uv: 18},
+          {name: 'Mar 16', uv: 23},
+          {name: 'Apr 16', uv: 34},
     ];
     const data2= [
           {name: '18-24', uv: 31.47, pv: 2400, fill: '#8884d8'},
@@ -27,12 +27,11 @@ export default class DashCharts extends Component {
           {name: '40-49', uv: 8.63, pv: 3908, fill: '#a4de6c'},
         ];
      const data3 = [
-        { subject: 'Math', A: 120, fullMark: 150 },
-        { subject: 'Chinese', A: 98, fullMark: 150 },
-        { subject: 'English', A: 86, fullMark: 150 },
-        { subject: 'Geography', A: 99, fullMark: 150 },
-        { subject: 'Physics', A: 85, fullMark: 150 },
-        { subject: 'History', A: 65, fullMark: 150 },
+        { subject: 'JavaScript', A: 120, fullMark: 150 },
+        { subject: 'CSS', A: 98, fullMark: 150 },
+        { subject: 'HTML', A: 86, fullMark: 150 },
+        { subject: 'C++', A: 99, fullMark: 150 },
+        { subject: 'PHP', A: 85, fullMark: 150 },
     ];
 
     const style = {
