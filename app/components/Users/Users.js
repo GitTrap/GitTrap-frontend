@@ -5,8 +5,13 @@ import shell from 'shell';
 
 export default class Users extends Component {
 
+  constructor(props) {
+    super(props);
+    this.onUserClick = this.onUserClick.bind(this);
+  }
+
   onUserClick(event, login) {
-    console.log(event);
+    event.preventDefault();
     shell.openExternal(`http://github.com/${login}`);
   }
 
@@ -53,7 +58,7 @@ export default class Users extends Component {
       return (
         <div key={key} className="user-item">
           <img src={person.avatar_url}/>
-          <a href="#" onClick={this.onUserClick.bind(this, person.login)} className="user">{person.login}</a>
+          <a href="#" onClick={(event) => this.onUserClick(event, person.login)} className="user">{person.login}</a>
           <div className="actions">
             <a className="btn btn-default" href="#">Super Follow</a>
             <a className="btn btn-default" href="#">Unfollow</a>
