@@ -6,6 +6,19 @@ import LeaderboardCategory from './LeaderboardCategory';
 import * as leaderboardActions from './../../actions/LeaderBoard.js';
 
  class LeaderBoard extends Component {
+
+   constructor (props, context) {
+     super(props, context);
+   }
+
+   getLeaderboardsData () {
+     this.props.getLeaderboards();
+   }
+
+   componentDidMount () {
+     this.getLeaderboardsData();
+   }
+
   render() {
     return (
       <div className="LeaderBoard">

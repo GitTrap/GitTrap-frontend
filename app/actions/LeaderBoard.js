@@ -38,8 +38,8 @@ export function getLeaderboards (token, user) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        'token': info.token,
-        'username': info.username
+        'token': 'dfsdfj',
+        'username': 'kennetpostigo'
       })
     })
       .then(response => response.json())

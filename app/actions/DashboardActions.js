@@ -21,7 +21,7 @@ export function dashboardSuccess (data) {
 }
 export function dashboardError (message) {
   return {
-    type: DASHBOARD_SUCCESS,
+    type: DASHBOARD_ERROR,
     isFetching: false,
     message
   }
@@ -43,7 +43,12 @@ export function getDashboard (info) {
     })
       .then(response => response.json())
       .then(res => {
-        dispatch(dashboardSuccess(res))
+        console.log(res);
+        if (res.error) {
+          dispatch(dashboardError(res.error));
+        } else {
+          dispatch(dashboardSuccess(res));
+        }
       }).catch(err => console.log('Error: ', err))
   }
 }

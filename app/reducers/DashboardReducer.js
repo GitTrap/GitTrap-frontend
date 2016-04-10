@@ -3,7 +3,7 @@ import {
   DASHBOARD_REQUEST,
   DASHBOARD_SUCCESS,
   DASHBOARD_ERROR
-} from './../actions/Dashboard.js';
+} from './../actions/DashboardActions.js';
 
 import {
   handleDashboardRequest,
@@ -12,10 +12,15 @@ import {
 } from './../core/Dashboard.js';
 
 const init = I.Map({
-
+  isFetching: false,
+  followersFeed:'',
+  issuesFeed:'',
+  commitChart:'',
+  topRepos: '',
+  languages: ''
 });
 
-export function dashboardReducer (state = Init, action) {
+export function dashboardReducer (state = init, action) {
   switch (action.type) {
 
     case DASHBOARD_REQUEST:

@@ -12,10 +12,13 @@ import {
 } from './../core/LeaderBoard.js';
 
 const init = I.Map({
-
+  isFetching: 'yo',
+  streakLeaderboard: 'shit',
+  commitsLeaderboard: 'fuck',
+  contributionsLeaderboard: 'stack'
 });
 
-export function leaderboardReducer (state = Init, action) {
+export function leaderboardReducer (state = init.toJS(), action) {
   switch (action.type) {
 
     case LEADERBOARD_REQUEST:

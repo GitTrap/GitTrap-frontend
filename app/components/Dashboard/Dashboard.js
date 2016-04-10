@@ -6,12 +6,20 @@ import { Link } from 'react-router';
 import DashNav from './DashNav';
 import DashCharts from './DashCharts';
 import DashFeed from './DashFeed';
-import * as dashboardActions from './../../actions/dashboard.js';
+import * as dashboardActions from './../../actions/DashboardActions.js';
 
 class Dashboard extends Component {
 
-  userData () {
-    fetch()
+  constructor (props, context) {
+    super(props, context);
+  }
+
+  getDashboardData () {
+    this.props.getDashboard( 'shit', 'kennetpostigo')
+  }
+
+  componentDidMount () {
+    this.getDashboardData();
   }
 
   render() {
@@ -20,10 +28,10 @@ class Dashboard extends Component {
         <div className="col-sm-12 segment">
           <DashCharts />
           <div className="col-sm-6">
-            <DashFeed listType="Follower Feed"/>
+            <DashFeed leaderboardsData={this.props.info.followersFeed} listType="Follower Feed"/>
           </div>
           <div className="col-sm-6">
-            <DashFeed listType="Issues"/>
+            <DashFeed leaderboardsData={this.props.info.issuesFeed} listType="Issues"/>
           </div>
         </div>
       </div>
@@ -33,6 +41,7 @@ class Dashboard extends Component {
 
 function mapStateToProps(state) {
   return {
+    user: state.user,
     info: state.dashboard
   }
 }
