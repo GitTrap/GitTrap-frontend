@@ -8,24 +8,27 @@ export default class DashFeed extends Component {
 
     var data = [
       'shit'
-    ]
+    ];
 
     var feed = data.map((item, key) => {
       return (
-        <li className="row nopadding" key={key}>
-          <p className="col-sm-3">{item.user}</p>
-          <p className="col-sm-3">{item.type}</p>
-          <p className="col-sm-3">{item.repo}</p>
-          <p className="col-sm-3">{item.branch}</p>
-        </li>
+        <div className="update-item" key={key}>
+          <h3 className="title">{ item.repo }</h3>
+          <h5 className="date">{item.type}</h5>
+          <p>{item.branch}</p>
+          <p>{item.user}</p>
+          <p>{item.type}</p>
+          <p>{item.repo}</p>
+          <p>{item.branch}</p>
+        </div>
       );
     });
     return (
       <div className="DashFeed">
-        <ul>
-          <h3>{this.props.listType}</h3>
+        <h3 className="feed-header">{this.props.listType}</h3>
+        <div className="feed-wrap">
           {feed}
-        </ul>
+        </div>
       </div>
     );
   }

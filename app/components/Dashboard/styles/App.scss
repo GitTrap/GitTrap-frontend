@@ -1,8 +1,12 @@
 .DashNavWrap {
   z-index: 2;
   padding-right: 0 !important;
+  padding-left: 0 !important;
 }
 .DashContentWrap {
   z-index: 0;
   padding-left: 0 !important;
+  padding-right: 0 !important;
+  height: 100vh;
+  overflow-y: scroll;
 }
