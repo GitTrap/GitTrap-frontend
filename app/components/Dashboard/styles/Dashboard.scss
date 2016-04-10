@@ -1,4 +1,5 @@
 .Dashboard{
+  height: 100%;
   h1{
     color: #fff;
   }
@@ -7,5 +8,16 @@
     margin-right: 0;
     padding-left:0;
     padding-right:0;
+  }
+  .dash-parts {
+    padding-right: 0;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .dash-feed-wrap {
+    position: absolute;
+    height: calc(100vh - 400px);
+    width: 100%;
   }
 }
