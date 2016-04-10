@@ -4,6 +4,20 @@ import { Link } from 'react-router';
 
 
 export default class CreateChallenge extends Component {
+
+  componentDidUpdate () {
+    
+  }
+
+  updateProfile () {
+    var goal = {
+      goalOne: this.refs.goalOne.value,
+      goalTwo: this.refs.goalTwo.value,
+      goalThree: this.refs.goalThree.value
+    }
+    console.log(updateProfile);
+  }
+
   render() {
 
     var data = [
@@ -30,11 +44,11 @@ export default class CreateChallenge extends Component {
         <h3>Create a Challenge</h3>
         <div className="setGoal">
           <label>Goal #1</label>
-          <input className="form-control" type="text"></input>
+          <input ref="goalOne" className="form-control" type="text"></input>
           <label>Goal #2</label>
-          <input className="form-control" type="text"></input>
+          <input ref="goalTwo" className="form-control" type="text"></input>
           <label>Goal #3</label>
-          <input className="form-control" type="text"></input>
+          <input ref="goalThree" className="form-control" type="text"></input>
         </div>
         <div className="followersToChallenge">
           <ul>

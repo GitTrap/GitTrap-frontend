@@ -13,19 +13,19 @@ import {
 
 const init = I.Map({
   isFetching: false,
-  challenges
+  challenges: ''
 });
 
-export function challengesReducer (state = init, action) {
+export function challengesReducer (state = init.toJS(), action) {
   switch (action.type) {
 
-    case DASHBOARD_REQUEST:
+    case CHALLENGES_REQUEST:
       return handleChallengesRequest(state);
 
-    case DASHBOARD_SUCCESS:
+    case CHALLENGES_SUCCESS:
       return handleChallengesSuccess(state, action.data);
 
-    case DASHBOARD_ERROR:
+    case CHALLENGES_ERROR:
       return handleChallengesError(state, action.message);
 
     default:
