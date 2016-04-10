@@ -35,4 +35,36 @@
       padding: 10px;
     }
   }
+  .leaderboardItem {
+    display: flex;
+    align-items: center;
+    padding: 14px 12px 14px 18px;
+    border: 1px solid #efefef;
+    // box-shadow: 7px 0px 0 0 #B25AFF inset;
+    .position {
+      font-size: 1.2em;
+      font-weight: 800;
+    }
+    img {
+      max-width: 50px;
+      height: 50px;
+      border-radius: 5px;
+    }
+    .user {
+      margin-left: 14px;
+      font-size: 1.1em;
+    }
+    .count {
+      margin-left: auto;
+      background: #B25AFF;
+      border-radius: 100%;
+      color: white;
+      line-height: 30px;
+      font-weight: bold;
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      vertical-align: middle;
+    }
+  }
 }
