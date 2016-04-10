@@ -25,27 +25,28 @@ body{
   justify-content: center;
   align-items: center;
   display: flex;
+  background: #EFB61F;
   h1{
-    font-size: 60px;
+    font-size: 11em;
     color: #fff;
-    font-family: $font;
-    text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    font-family: 'Gotham';
+    font-weight: 800;
+    letter-spacing: -2px;
+    // text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   }
-  a{
+  a {
     margin-top: 5vh;
     box-shadow: 0 3px 4px rgba(0,0,0,0.16), 0 3px 4px rgba(0,0,0,0.23);
-    color: #fefb00;
+    color: #fff;
     background-color: #9238e1;
     height: 90px;
     padding-top: 15px;
     width: 350px;
     font-size: 40px;
-    border: 2px solid #fefb00;
     border-radius: 0;
     &:hover{
-      color: #b161fc;
-      background-color: #fefb00;
-      border-color: #b161fc;
+      color: #fff;
+      background-color: darken(#9238e1, 20%);
     }
   }
 }

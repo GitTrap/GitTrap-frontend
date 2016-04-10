@@ -30,8 +30,7 @@ class Users extends Component {
           <img src={user.avatar}/>
           <a href="#" onClick={(event) => this.onUserClick(event, user.username)} className="user">{user.username}</a>
           <div className="actions">
-            <a className="btn btn-default" href="#">Super Follow</a>
-            <a className="btn btn-default" href="#">Unfollow</a>
+            <a className="btn btn-default" href="#">Super Unfollow</a>
           </div>
         </div>
       );

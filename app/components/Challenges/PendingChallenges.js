@@ -15,7 +15,7 @@ class PendingChallenges extends Component {
   render() {
     return (
       <div className="Challenges">
-        <Link to="/challenges/createchallenge">+</Link>
+        <Link style={styles.addButton} to="/challenges/createchallenge">+</Link>
           <div className="goal">
             <h1>Goal</h1>
             <ol>
@@ -26,37 +26,54 @@ class PendingChallenges extends Component {
           </div>
           <div className="users">
             <div className="challengers">
-              <img  src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/629c1f14015191.5627be627c443.png"/>
+              <img src="https://avatars0.githubusercontent.com/u/13911839"/>
               <div className="info">
-                <p>{this.props.challenges.challengees[0]}</p>
-                <p>commits: 6</p>
-                <p>Streak: 7</p>
-                <p>contributions: 4</p>
+                <p><h3>{this.props.challenges.challengees[0]}</h3></p>
+                <p><strong>commits</strong>: 6</p>
+                <p><strong>Streak</strong>: 7</p>
+                <p><strong>contributions</strong>: 4</p>
               </div>
             </div>
 
             <div className="challengers">
-              <img  src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/629c1f14015191.5627be627c443.png"/>
+              <img src="https://avatars3.githubusercontent.com/u/8888991"/>
               <div className="info">
-                <p>kennetpostigo</p>
-                <p>commits: 7</p>
-                <p>Streak: 1</p>
-                <p>contributions: 2</p>
+                <p><h3>kennetpostigo</h3></p>
+                <p><strong>commits</strong>: 7</p>
+                <p><strong>Streak</strong>: 1</p>
+                <p><strong>contributions</strong>: 2</p>
               </div>
             </div>
 
             <div className="challengers">
-              <img  src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/629c1f14015191.5627be627c443.png"/>
+              <img src="https://avatars1.githubusercontent.com/u/1750392"/>
               <div className="info">
-                <p>jalvarado91</p>
-                <p>commits: 12</p>
-                <p>Streak: 1</p>
-                <p>contributions: 1</p>
+                <p><h3>jalvarado91</h3></p>
+                <p><strong>commits</strong>: 12</p>
+                <p><strong>Streak</strong>: 1</p>
+                <p><strong>contributions</strong>: 1</p>
               </div>
             </div>
           </div>
       </div>
     );
+  }
+}
+
+const styles = {
+  addButton: {
+    background: '#efb61f',
+    color: 'white',
+    padding: '14px 0',
+    textAlign: 'center',
+    fontWeight: '800',
+    width: '100%',
+    marginBottom: '40px',
+    maxWidth: '640px',
+    fontSize: '2em',
+    lineHeight: '1em',
+    textDecoration: 'none',
+    boxShadow: '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)'
   }
 }
 

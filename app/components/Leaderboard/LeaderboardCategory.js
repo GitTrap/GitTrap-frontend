@@ -37,10 +37,20 @@ export default class LeaderboardCategory extends Component {
         streak: 2
       }
     ];
+    var sorted_streak = streaks.sort(function (a, b) {
+      console.log(sorted_streak);
+      if (a.streak < b.streak) {
+        return 1;
+      }
+      if (a.streak > b.streak) {
+        return -1;
+      }
+      return 0;
+    });
     const commits = [
       {
         login: 'kennetpostigo',
-        streak: 24
+        streak: 5
       },
       {
         login: 'jalvarado91',
@@ -48,39 +58,57 @@ export default class LeaderboardCategory extends Component {
       },
       {
         login: 'ash_daddy',
-        streak: 39
+        streak: 29
       },
       {
         login: 'alastairparagas',
-        streak: 89
+        streak: 80
       },
       {
         login: 'darkfader',
-        streak: 2
+        streak: 5
       }
     ];
+    commits.sort(function (a, b) {
+      if (a.streak < b.streak) {
+        return 1;
+      }
+      if (a.streak > b.streak) {
+        return -1;
+      }
+      return 0;
+    });
     const contributions = [
       {
         login: 'kennetpostigo',
-        streak: 24
+        streak: 9
       },
       {
         login: 'jalvarado91',
-        streak: 23
+        streak: 12
       },
       {
         login: 'ash_daddy',
-        streak: 39
+        streak: 7
       },
       {
         login: 'alastairparagas',
-        streak: 89
+        streak: 2
       },
       {
         login: 'darkfader',
-        streak: 2
+        streak: 50
       }
     ];
+    contributions.sort(function (a, b) {
+      if (a.streak < b.streak) {
+        return 1;
+      }
+      if (a.streak > b.streak) {
+        return -1;
+      }
+      return 0;
+    });
 
     var board = [
       {
@@ -139,7 +167,7 @@ export default class LeaderboardCategory extends Component {
       }
     ];
 
-    var streakLead = streaks.map((person, key) => {
+    var streakLead = sorted_streak.map((person, key) => {
       return <div className="leaderboardItem" key={key}>
         <span className="position">{key + 1}</span>
         {/*<img src={person.avatar_url}/>*/}
