@@ -1,13 +1,20 @@
 import './styles/Users.scss';
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as userActions from './../../actions/UserActions.js';
 import { Link } from 'react-router';
 import shell from 'shell';
 
-export default class Users extends Component {
+class Users extends Component {
 
   constructor(props) {
     super(props);
     this.onUserClick = this.onUserClick.bind(this);
+  }
+
+  componentDidMount () {
+    this.props.getUsers();
   }
 
   onUserClick(event, login) {
@@ -16,49 +23,12 @@ export default class Users extends Component {
   }
 
   render() {
-    const following = [
-      {
-        id: 69156,
-        login: "chriscoyier",
-        gravatar_id: "",
-        url: "https://api.github.com/users/chriscoyier",
-        avatar_url: "https://avatars.githubusercontent.com/u/69156?"
-      },
-      {
-        id: 69156,
-        login: "chriscoyier",
-        gravatar_id: "",
-        url: "https://api.github.com/users/chriscoyier",
-        avatar_url: "https://avatars.githubusercontent.com/u/69156?"
-      },
-      {
-        id: 69156,
-        login: "chriscoyier",
-        gravatar_id: "",
-        url: "https://api.github.com/users/chriscoyier",
-        avatar_url: "https://avatars.githubusercontent.com/u/69156?"
-      },
-      {
-        id: 69156,
-        login: "chriscoyier",
-        gravatar_id: "",
-        url: "https://api.github.com/users/chriscoyier",
-        avatar_url: "https://avatars.githubusercontent.com/u/69156?"
-      },
-      {
-        id: 69156,
-        login: "chriscoyier",
-        gravatar_id: "",
-        url: "https://api.github.com/users/chriscoyier",
-        avatar_url: "https://avatars.githubusercontent.com/u/69156?"
-      }
-    ];
 
-    var users = following.map((person, key) => {
+    var users = this.props.users.devPool.map((user, key) => {
       return (
         <div key={key} className="user-item">
-          <img src={person.avatar_url}/>
-          <a href="#" onClick={(event) => this.onUserClick(event, person.login)} className="user">{person.login}</a>
+          <img src={user.avatar_url}/>
+          <a href="#" onClick={(event) => this.onUserClick(event, user)} className="user">{user}</a>
           <div className="actions">
             <a className="btn btn-default" href="#">Super Follow</a>
             <a className="btn btn-default" href="#">Unfollow</a>
@@ -77,3 +47,23 @@ export default class Users extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    users: state.users
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    userRequest: bindActionCreators(userActions.userRequest, dispatch),
+    userSuccess: bindActionCreators(userActions.userSuccess, dispatch),
+    userError: bindActionCreators(userActions.userError, dispatch),
+    getUsers: bindActionCreators(userActions.getUsers, dispatch)
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Users);
