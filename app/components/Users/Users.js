@@ -1,8 +1,15 @@
 import './styles/Users.scss';
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import shell from 'shell';
 
 export default class Users extends Component {
+
+  onUserClick(event, login) {
+    console.log(event);
+    shell.openExternal(`http://github.com/${login}`);
+  }
+
   render() {
     const following = [
       {
@@ -46,10 +53,10 @@ export default class Users extends Component {
       return (
         <div key={key} className="user-item">
           <img src={person.avatar_url}/>
-          <span className="user">{person.login}</span>
+          <a href="#" onClick={this.onUserClick.bind(this, person.login)} className="user">{person.login}</a>
           <div className="actions">
             <a className="btn btn-default" href="#">Super Follow</a>
-            <a className="btn btn-warning" href="#">Unfollow</a>
+            <a className="btn btn-default" href="#">Unfollow</a>
           </div>
         </div>
       );
