@@ -1,28 +1,83 @@
 import './styles/LeaderboardCategory.scss';
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import shell from 'shell';
 
 export default class LeaderboardCategory extends Component {
+  constructor(props) {
+    super(props);
+    this.onUserClick = this.onUserClick.bind(this);
+  }
+
+  onUserClick(event, login) {
+    event.preventDefault();
+    shell.openExternal(`http://github.com/${login}`);
+  }
+
   render () {
     const streaks = [
       {
-        user: 'kennetpostigo',
+        login: 'kennetpostigo',
         streak: 24
       },
       {
-        user: 'jalvarado91',
+        login: 'jalvarado91',
         streak: 23
       },
       {
-        user: 'ash_daddy',
+        login: 'ash_daddy',
         streak: 39
       },
       {
-        user: 'alastairparagas',
+        login: 'alastairparagas',
         streak: 89
       },
       {
-        user: 'darkfader',
+        login: 'darkfader',
+        streak: 2
+      }
+    ];
+    const commits = [
+      {
+        login: 'kennetpostigo',
+        streak: 24
+      },
+      {
+        login: 'jalvarado91',
+        streak: 23
+      },
+      {
+        login: 'ash_daddy',
+        streak: 39
+      },
+      {
+        login: 'alastairparagas',
+        streak: 89
+      },
+      {
+        login: 'darkfader',
+        streak: 2
+      }
+    ];
+    const contributions = [
+      {
+        login: 'kennetpostigo',
+        streak: 24
+      },
+      {
+        login: 'jalvarado91',
+        streak: 23
+      },
+      {
+        login: 'ash_daddy',
+        streak: 39
+      },
+      {
+        login: 'alastairparagas',
+        streak: 89
+      },
+      {
+        login: 'darkfader',
         streak: 2
       }
     ];
@@ -82,24 +137,69 @@ export default class LeaderboardCategory extends Component {
         repo: 'plasma',
         branch: 'master'
       }
-    ]
-    var leaders = board.map((person, key) => {
-      return (
-        <li key={key}>
-          <p>{person.user}</p>
-          <p>{person.type}</p>
-          <p>{person.repo}</p>
-          <p>{person.branch}</p>
-        </li>
-      );
+    ];
+
+    var streakLead = streaks.map((person, key) => {
+      return <div className="leaderboardItem" key={key}>
+        <span className="position">{key + 1}</span>
+        {/*<img src={person.avatar_url}/>*/}
+        <a href="#" onClick={(event) => this.onUserClick(event, person.login)} className="user">{person.login}</a>
+        <div className="count">
+          {person.streak}
+        </div>
+      </div>
     });
+
+    var commitsLead = commits.map((person, key) => {
+      return <div className="leaderboardItem" key={key}>
+        <span className="position">{key + 1}</span>
+        {/*<img src={person.avatar_url}/>*/}
+        <a href="#" onClick={(event) => this.onUserClick(event, person.login)} className="user">{person.login}</a>
+        <div className="count">
+          {person.streak}
+        </div>
+      </div>
+    });
+
+    var contribsLead = contributions.map((person, key) => {
+      return <div className="leaderboardItem" key={key}>
+        <span className="position">{key + 1}</span>
+        {/*<img src={person.avatar_url}/>*/}
+        <a href="#" onClick={(event) => this.onUserClick(event, person.login)} className="user">{person.login}</a>
+        <div className="count">
+          {person.streak}
+        </div>
+      </div>
+    });
+
+    var leaders;
+    switch (this.props.boardTitle) {
+      case "Streak":
+        leaders = streakLead;
+        break;
+      case "Commits":
+        leaders = commitsLead;
+        break;
+      case "Contributions":
+        leaders = contribsLead;
+        break;
+      default:
+        leaders = board.map((person, key) => {
+          return (
+            <li key={key}>
+              <p>{person.user}</p>
+              <p>{person.type}</p>
+            </li>
+          );
+        });
+    }
 
     return (
       <div className="LeaderboardCategory">
         <h3 className={this.props.border}>{this.props.boardTitle}</h3>
-        <ul>
+        <div>
           {leaders}
-        </ul>
+        </div>
       </div>
     );
 
