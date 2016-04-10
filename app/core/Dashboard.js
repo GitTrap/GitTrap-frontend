@@ -8,9 +8,18 @@ export function handleDashboardRequest (state) {
 
 export function handleDashboardSuccess (state, data) {
     state = I.fromJS(state);
+    var issue = data.filter((item) => {
+      return item.type.toLowerCase().indexOf('issue') > -1;
+    });
+    var feed = data.filter((item) => {
+      return item.type.toLowerCase().indexOf('issue') === -1;
+    })
+    console.log('feed', feed);
+    console.log('issue', issue);
+    console.log('dataFromCore', data)
     var update = state.set('isFetching', false).
-                 set('followersFeed', 'temp').
-                 set('issuesFeed', 'temp2').
+                 set('followersFeed', I.fromJS(feed)).
+                 set('issuesFeed', I.fromJS(issue)).
                  set('commitChart', 'temp3').
                  set('topRepos', 'temp4').
                  set('languages', 'temp5');
