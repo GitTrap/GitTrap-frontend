@@ -11,7 +11,7 @@ export function handleUserSuccess (state, users) {
   var setType = users[0].users.map((user, key) => {
     return {
       username: user.username,
-      avatar: user.avatar_url
+      avatar: user.photo_url
     };
   });
   var update = state.set('devPool', I.fromJS(setType));
