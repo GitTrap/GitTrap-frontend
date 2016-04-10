@@ -85,11 +85,11 @@ export default class LeaderboardCategory extends Component {
     ]
     var leaders = board.map((person, key) => {
       return (
-        <li className="row nopadding" key={key}>
-          <p className="col-sm-3">{person.user}</p>
-          <p className="col-sm-3">{person.type}</p>
-          <p className="col-sm-3">{person.repo}</p>
-          <p className="col-sm-3">{person.branch}</p>
+        <li key={key}>
+          <p>{person.user}</p>
+          <p>{person.type}</p>
+          <p>{person.repo}</p>
+          <p>{person.branch}</p>
         </li>
       );
     });
