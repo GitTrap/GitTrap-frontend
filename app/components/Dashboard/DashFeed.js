@@ -5,38 +5,10 @@ import { Link } from 'react-router';
 export default class DashFeed extends Component {
 
   render () {
+
     var data = [
-      {
-        type: 'star',
-        user: 'kennetpostigo',
-        repo: 'react-reach',
-        branch: 'master'
-      },
-      {
-        type: 'follow',
-        user: 'jalvarado',
-        repo: 'gitTrap',
-        branch: 'master'
-      },
-      {
-        type: 'created repo',
-        user: 'alaingalvan',
-        repo: 'plasma',
-        branch: 'master'
-      },
-      {
-        type: 'follow',
-        user: 'jalvarado',
-        repo: 'gitTrap',
-        branch: 'master'
-      },
-      {
-        type: 'created repo',
-        user: 'alaingalvan',
-        repo: 'plasma',
-        branch: 'master'
-      }
-    ]
+      'shit'
+    ];
 
     var feed = data.map((item, key) => {
       return (
