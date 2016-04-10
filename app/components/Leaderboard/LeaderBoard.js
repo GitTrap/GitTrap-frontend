@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { Link } from 'react-router';
 import LeaderboardCategory from './LeaderboardCategory';
+import * as leaderboardActions from './../../actions/LeaderBoard.js';
 
-export default class LeaderBoard extends Component {
+ class LeaderBoard extends Component {
   render() {
     return (
       <div className="LeaderBoard">
@@ -33,3 +36,23 @@ const styles = {
     paddingLeft: 0
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    info: state.leaderboards
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    leaderboardRequest: bindActionCreators(leaderboardActions.leaderboardRequest, dispatch),
+    leaderboardSuccess: bindActionCreators(leaderboardActions.leaderboardSuccess, dispatch),
+    leaderboardError: bindActionCreators(leaderboardActions.leaderboardError, dispatch),
+    getLeaderboards: bindActionCreators(leaderboardActions.getLeaderboards, dispatch),
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LeaderBoard);
