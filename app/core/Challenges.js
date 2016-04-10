@@ -43,5 +43,6 @@ export function handleGetChallengeInfo (state, info) {
                        set('goalTwo', info.goalTwo).
                        set('goalThree', info.goalThree).
                        set('challengees', I.fromJS(info.challengees));
+
     return update.toJS();
 }

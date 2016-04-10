@@ -33,3 +33,27 @@ export function handleDashboardError (state, message) {
                  set('error', message);
     return update.toJS();
 }
+
+export function handleCommitChart (state, commits) {
+  state = I.fromJS(state);
+  var commitsArray = commits.map((item) => {
+    return {
+      timeStamp: item[0],
+      commits: item[1]
+    };
+  })
+  var update = state.set('frequency', I.fromJS(commitsArray))
+  return update.toJS();
+}
+
+export function handleTopReposChart (state, repos) {
+  state = I.fromJS(state);
+  var update = state.set('timeStamp', languages)
+  return update.toJS();
+}
+
+export function handleLanguagesChart (state, languages) {
+  state = I.fromJS(state);
+  var update = state.set('timeStamp', languages)
+  return update.toJS();
+}

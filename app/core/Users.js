@@ -8,10 +8,13 @@ export function handleUserRequest (state) {
 
 export function handleUserSuccess (state, users) {
   state = I.fromJS(state);
-  var usernames = users[0].users.map((user, key) => {
-    return user.username;
+  var setType = users[0].users.map((user, key) => {
+    return {
+      username: user.username,
+      avatar: user.avatar_url
+    };
   });
-  var update = state.set('devPool', I.fromJS(usernames));
+  var update = state.set('devPool', I.fromJS(setType));
   return update.toJS();
 }
 
